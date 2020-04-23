@@ -24,8 +24,7 @@ You need to have a working phoenix pubsub configured. Here is what the default l
 ```elixir
 config :my_app, MyAppWeb.Endpoint,
   # ... other config
-  pubsub: [name: MyApp.PubSub,
-           adapter: Phoenix.PubSub.PG2]
+  pubsub_server: MyApp.PubSub
 ```
 
 In your application supervisor add a line AFTER your existing endpoint supervision

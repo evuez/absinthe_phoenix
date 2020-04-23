@@ -70,6 +70,7 @@ defmodule Absinthe.Phoenix.Endpoint do
   end
 
   defp pubsub(otp_app, endpoint) do
+    Application.get_env(otp_app, endpoint)[:pubsub_server] ||
     Application.get_env(otp_app, endpoint)[:pubsub][:name] ||
       raise """
       Pubsub needs to be configured for #{inspect(otp_app)} #{inspect(endpoint)}!
